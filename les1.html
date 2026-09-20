@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tekstverwerking 1 · Tekst invoeren en verbeteren · NovaDepot</title>
+  <link rel="icon" href="assets/novadepot-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- data-storage: voorvoegsel voor localStorage (alleen vinkjes en huidige stap) -->
+<body data-storage="novadepot_tv1_">
+
+<div class="teacher-banner">Leraarweergave: de roze kaders tonen waar je een screenshot kan plaatsen. Leerlingen zien die kaders niet.</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" title="Naar het overzicht van de reeks">
+      <img src="assets/novadepot-logo.svg" alt="NovaDepot">
+      <span class="brand-lesson">Tekstverwerking 1 · Tekst invoeren en verbeteren</span>
+    </a>
+    <span class="topbar-spacer"></span>
+    <div class="progress-wrap" title="Jouw voortgang">
+      <div class="progress-track" role="progressbar" aria-label="Voortgang" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-label" id="progressLabel">0 van 0</span>
+    </div>
+    <button class="btn-theory" type="button" data-open-theory>📖 Theoriekaart</button>
+    <img class="dalton-mark" src="assets/dalton-gent-logo.png" alt="GO! Dalton Gent">
+  </div>
+  <nav class="stepper" aria-label="Stappen">
+    <button type="button" data-step="start"><span class="num"><span>i</span></span><span class="lbl">Start</span></button>
+    <button type="button" data-step="1"><span class="num"><span>1</span></span><span class="lbl">Klaarzetten</span></button>
+    <button type="button" data-step="2"><span class="num"><span>2</span></span><span class="lbl">Foutenjacht</span></button>
+    <button type="button" data-step="3"><span class="num"><span>3</span></span><span class="lbl">Volgorde</span></button>
+    <button type="button" data-step="4"><span class="num"><span>4</span></span><span class="lbl">Nota typen</span></button>
+    <button type="button" data-step="5"><span class="num"><span>5</span></span><span class="lbl">Inleveren</span></button>
+    <button type="button" data-step="extra" class="extra"><span class="num"><span>+</span></span><span class="lbl">Extra</span></button>
+  </nav>
+</header>
+
+<div class="layout">
+<main id="main">
+
+  <!-- ================= START ================= -->
+  <section class="pane" id="pane-start" aria-labelledby="h-start">
+    <div class="card">
+      <p class="pane-kicker">Tekstverwerking · les 1 van 2</p>
+      <h1 id="h-start">Tekst invoeren en verbeteren</h1>
+      <p>Je werkt deze week op het kantoor van <strong>NovaDepot</strong>. Je collega's geven je teksten. Jij typt ze en verbetert de fouten.</p>
+      <p>Een mededeling hangt aan de muur of gaat naar alle chauffeurs. Er mag dus geen fout in staan.</p>
+
+      <h3>Op het einde van deze les kan je</h3>
+      <ul>
+        <li>de delen van het venster van een <button class="term" type="button">tekstverwerker</button> benoemen;</li>
+        <li>uitleggen waarom je alleen op <kbd>Enter</kbd> drukt aan het einde van een <button class="term" type="button">alinea</button>;</li>
+        <li>tekst typen, <button class="term" type="button">selecteren</button>, verplaatsen, kopiëren en wissen;</li>
+        <li>fouten vinden met de <button class="term" type="button">verborgen tekens</button> en de <button class="term" type="button">spellingcontrole</button>.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Zo werk je</h2>
+      <div class="where"><span class="where-label">Je gebruikt twee vensters:</span></div>
+      <table class="plain">
+        <tr><th><span class="badge badge-web">🖥️ Lespagina</span></th><td>Deze website, <strong>links</strong> op je scherm. Hier lees je wat je moet doen.</td></tr>
+        <tr><th><span class="badge badge-doc">📄 Werkdocument</span></th><td>Jouw Google-document <strong>TV1_Tekst-invoeren</strong>, <strong>rechts</strong> op je scherm. Hier maak je de opdrachten.</td></tr>
+      </table>
+
+      <h3>Elke stap gaat zo</h3>
+      <ol class="todo">
+        <li><strong>Lees</strong> de hele stap. Begin nog niet.</li>
+        <li><strong>Doe</strong> de handelingen één voor één, in de juiste volgorde.</li>
+        <li><strong>Controleer</strong> jezelf met het groene vak.</li>
+        <li><strong>Vink</strong> “Klaar” aan. Ga dan naar de volgende stap.</li>
+      </ol>
+
+      <div class="note">
+        <p><strong>Vast je?</strong> Volg deze volgorde:</p>
+        <p>1. Kijk op de theoriekaart. &nbsp;2. Open de hint (💡). &nbsp;3. Vraag het aan je buur. &nbsp;4. Vraag het aan de leraar.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Overzicht</h2>
+      <div class="table-wrap">
+      <table class="plain">
+        <thead><tr><th>Stap</th><th>Wat doe je?</th><th>Tijd</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Je werkdocument klaarzetten</td><td>5 min.</td></tr>
+          <tr><td>2</td><td>Opdracht A: 8 fouten verbeteren</td><td>7 min.</td></tr>
+          <tr><td>3</td><td>Opdracht B: zinnen in de juiste volgorde zetten</td><td>6 min.</td></tr>
+          <tr><td>4</td><td>Opdracht C: een nota overtypen</td><td>8 min.</td></tr>
+          <tr><td>5</td><td>Controleren en inleveren</td><td>5 min.</td></tr>
+          <tr><td>+</td><td>Extra: fouten die de computer niet ziet (niet verplicht)</td><td>–</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:.8rem"><strong>Wat lever je in?</strong> Alleen je werkdocument, via Google Classroom. De lespagina lever je niet in.</p>
+    </div>
+
+    <div class="card">
+      <h2>Test jezelf voor je begint</h2>
+      <p>Lees eerst <a href="#" data-open-theory="th-typregels">de 4 typregels op de theoriekaart</a>. Beantwoord dan deze 3 vragen. Je antwoorden worden nergens bewaard.</p>
+      <div class="quiz">
+        <div class="quiz-q" data-ok="Juist! De tekst gaat vanzelf naar de volgende regel." data-nok="Nog niet. Lees typregel 1 opnieuw.">
+          <p>1. Wanneer druk je op Enter?</p>
+          <div class="opts">
+            <button type="button">Aan het einde van elke regel.</button>
+            <button type="button" data-right>Aan het einde van een alinea.</button>
+            <button type="button">Om een titel in het midden te zetten.</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+        <div class="quiz-q" data-ok="Juist! Geen spatie vóór de komma, wel één erna." data-nok="Nog niet. Lees typregel 2 opnieuw.">
+          <p>2. Welke zin is juist getypt?</p>
+          <div class="opts">
+            <button type="button">Vragen ? Bel het onthaal .</button>
+            <button type="button">Vragen?Bel het onthaal.</button>
+            <button type="button" data-right>Vragen? Bel het onthaal.</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+        <div class="quiz-q" data-ok="Juist! Ctrl + Z maakt je laatste actie ongedaan." data-nok="Nog niet. Kijk op de theoriekaart bij ‘Iets misgelopen?’.">
+          <p>3. Je wist per ongeluk een zin. Wat doe je?</p>
+          <div class="opts">
+            <button type="button" data-right>Ik druk op Ctrl + Z.</button>
+            <button type="button">Ik typ de zin opnieuw.</button>
+            <button type="button">Ik sluit het document.</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="pane-nav"><span></span><button class="btn btn-primary" type="button" data-goto="1">Start met stap 1 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 1 ================= -->
+  <section class="pane" id="pane-1" aria-labelledby="h-1">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 1 van 5</p>
+        <h2 id="h-1">Je werkdocument klaarzetten</h2>
+        <p class="goal">Je opent je werkdocument en zet alles klaar om te werken.</p>
+        <span class="time">± 5 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-class">🏫 Google Classroom</span><span class="badge badge-doc">📄 Werkdocument</span></div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Ga naar het tabblad van <strong>Google Classroom</strong>. Open de opdracht <strong>Tekstverwerking 1 — Tekst invoeren en verbeteren</strong>.</li>
+        <li>Klik op je werkdocument <strong>TV1_Tekst-invoeren</strong>. Het opent in een nieuw tabblad.</li>
+        <li>Zet de twee vensters naast elkaar.
+          <span class="sub">Sleep het tabblad van het werkdocument een beetje naar beneden, uit het venster. Nu heb je twee vensters.<br>Klik in het venster van de lespagina en druk <kbd>⊞ Windows</kbd> + <kbd>←</kbd>. Klik in het werkdocument en druk <kbd>⊞ Windows</kbd> + <kbd>→</kbd>.</span></li>
+        <li>Typ in het werkdocument je <strong>naam</strong> en je <strong>klas</strong> op de lijnen bovenaan.</li>
+        <li>Zet de verborgen tekens aan. Klik in de <button class="term" type="button">menubalk</button> op <span class="ui">Bekijken</span>. Klik daarna op <span class="ui">Opmaakmarkeringen tonen</span>.</li>
+      </ol>
+
+      <figure class="shot" data-shot="les1-twee-vensters.png" data-alt="Lespagina links en werkdocument rechts, naast elkaar op het scherm" data-caption="Zo ziet je scherm eruit: links de lespagina, rechts je werkdocument."></figure>
+      <figure class="shot" data-shot="les1-menu-bekijken.png" data-alt="Menu Bekijken open, met de regel Opmaakmarkeringen tonen aangeduid" data-caption="Menu Bekijken → Opmaakmarkeringen tonen."></figure>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>Je ziet links de lespagina en rechts je werkdocument.</li>
+          <li>Linksboven in het werkdocument staat een bestandsnaam met <strong>jouw naam</strong> erin.</li>
+          <li>Aan het einde van elke alinea in je werkdocument zie je het teken <span class="pil">¶</span>.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? De vensters staan niet naast elkaar</summary>
+        <div class="hint-body">
+          <p>De <kbd>⊞ Windows</kbd>-toets is de toets met het Windows-logo, links onderaan naast <kbd>Alt</kbd>.</p>
+          <p>Lukt het niet? Werk dan met twee tabbladen. Klik bovenaan op het tabblad dat je nodig hebt.</p>
+        </div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Ik vind de verborgen tekens niet</summary>
+        <div class="hint-body">
+          <p><span class="ui">Bekijken</span> is het derde woord in de menubalk: Bestand – Bewerken – <strong>Bekijken</strong>.</p>
+          <p>In dat menu klik je op <span class="ui">Opmaakmarkeringen tonen</span>. Bij die regel staat het teken <span class="pil">¶</span>.</p>
+          <p>Klik je er nog een keer op, dan zijn de tekens weer weg.</p>
+        </div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-1"><label for="klaar-1">Klaar met stap 1</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="start">← Start</button><button class="btn btn-primary" type="button" data-goto="2">Stap 2 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 2 ================= -->
+  <section class="pane" id="pane-2" aria-labelledby="h-2">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 2 van 5 · Opdracht A</p>
+        <h2 id="h-2">Foutenjacht</h2>
+        <p class="goal">Je zoekt 8 fouten in een mededeling en je verbetert ze.</p>
+        <span class="time">± 7 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Opdracht A</span></div>
+
+      <h3>Deze fouten staan in de tekst</h3>
+      <div class="table-wrap">
+      <table class="plain">
+        <thead><tr><th>Soort fout</th><th>Hoeveel?</th><th>Zo zie je het</th></tr></thead>
+        <tbody>
+          <tr><td>Een spatie <strong>vóór</strong> een leesteken</td><td>2</td><td><code>uur<span class="dot">·</span>.</code></td></tr>
+          <tr><td>Twee spaties tussen twee woorden</td><td>2</td><td><code>is<span class="dot">··</span>het</code></td></tr>
+          <tr><td>Een zin begint met een kleine letter</td><td>1</td><td><code>. op vrijdag</code></td></tr>
+          <tr><td>Een Enter midden in een zin</td><td>1</td><td><code>krijgen ze een<span class="pil">¶</span></code></td></tr>
+          <tr><td>Een tikfout</td><td>2</td><td>rode golflijn onder het woord</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Ga in je werkdocument naar <strong>Opdracht A</strong>. Lees de tekst één keer helemaal.</li>
+        <li>Kijk naar de verborgen tekens. Een <span class="dot">·</span> is een spatie. Een <span class="pil">¶</span> is een Enter.</li>
+        <li>Verbeter de spaties en de Enter. Klik vlak <strong>achter</strong> het teken dat weg moet. Druk op <kbd>Backspace</kbd> <kbd>⟵</kbd>.</li>
+        <li>Verbeter de kleine letter. Klik achter de letter. Druk op <kbd>Backspace</kbd>. Typ de hoofdletter met <kbd>Shift</kbd>.</li>
+        <li>Verbeter de tikfouten. Klik met de <strong>rechtermuisknop</strong> op het rode woord. Klik op het juiste woord.</li>
+      </ol>
+
+      <figure class="shot" data-shot="les1-foutenjacht-tekens.png" data-alt="Opdracht A met verborgen tekens aan: een spatie vóór een punt en een Enter midden in een zin zijn zichtbaar" data-caption="Met de verborgen tekens zie je de spaties (·) en de Enters (¶)."></figure>
+      <figure class="shot" data-shot="les1-spelling-rechtsklik.png" data-alt="Rechtsklik op een woord met een rode golflijn toont de juiste schrijfwijze bovenaan" data-caption="Rechtsklik op een rood woord: bovenaan staat het juiste woord."></figure>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>Je hebt <strong>8</strong> fouten verbeterd.</li>
+          <li>Je ziet nergens <span class="dot">··</span> (twee spaties) en nergens een <span class="dot">·</span> vóór een punt of komma.</li>
+          <li>Elke zin begint met een hoofdletter.</li>
+          <li>Er staat geen <span class="pil">¶</span> midden in een zin.</li>
+          <li>In Opdracht A staan geen rode golflijnen meer.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Ik vind de Enter-fout niet</summary>
+        <div class="hint-body">
+          <p>Zoek een regel die <strong>stopt</strong> voor hij de rechterkant bereikt, terwijl de zin nog niet af is.</p>
+          <p>Klik vooraan de volgende regel, vóór de eerste letter. Druk op <kbd>Backspace</kbd>. Staan de twee woorden nu tegen elkaar? Typ dan één spatie.</p>
+        </div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Ik heb te veel gewist</summary>
+        <div class="hint-body">
+          <p>Druk op <kbd>Ctrl</kbd> + <kbd>Z</kbd>. Je laatste actie wordt ongedaan gemaakt. Druk nog eens om nog een stap terug te gaan.</p>
+        </div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? “NovaDepot” is rood onderlijnd</summary>
+        <div class="hint-body">
+          <p>De computer kent de naam NovaDepot niet. De naam is wel juist geschreven. Laat hem zo staan. Een rode lijn onder een juiste naam is geen fout.</p>
+        </div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-2"><label for="klaar-2">Klaar met stap 2</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="1">← Stap 1</button><button class="btn btn-primary" type="button" data-goto="3">Stap 3 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 3 ================= -->
+  <section class="pane" id="pane-3" aria-labelledby="h-3">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 3 van 5 · Opdracht B</p>
+        <h2 id="h-3">Zinnen in de juiste volgorde</h2>
+        <p class="goal">Je zet de stappen van een levering in de juiste volgorde. Je kopieert één zin en je wist één zin.</p>
+        <span class="time">± 6 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Opdracht B</span></div>
+
+      <div class="note">
+        <p><strong>Knippen</strong> <kbd>Ctrl</kbd> + <kbd>X</kbd>: de tekst gaat weg en wacht in het <button class="term" type="button">klembord</button>.<br>
+        <strong>Kopiëren</strong> <kbd>Ctrl</kbd> + <kbd>C</kbd>: de tekst blijft staan én gaat naar het klembord.<br>
+        <strong>Plakken</strong> <kbd>Ctrl</kbd> + <kbd>V</kbd>: de tekst uit het klembord komt waar je cursor staat.</p>
+      </div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Lees alle zinnen van Opdracht B. Let op de woorden vooraan: <strong>Eerst – Daarna – Vervolgens – Als alles klopt – Dan – Tot slot</strong>.</li>
+        <li>Zoek de zin die bij stap 1 hoort. Klik <strong>3 keer</strong> in die zin: de zin is <button class="term" type="button" data-term="selecteren">geselecteerd</button>. Druk <kbd>Ctrl</kbd> + <kbd>X</kbd>.</li>
+        <li>Klik in de tabel in het lege vak naast <strong>1</strong>. Druk <kbd>Ctrl</kbd> + <kbd>V</kbd>. Doe hetzelfde voor stap 2 tot en met 6.</li>
+        <li>Selecteer de <strong>contactzin</strong> helemaal bovenaan Opdracht B (“Problemen met een levering? …”). Druk <kbd>Ctrl</kbd> + <kbd>C</kbd>. Klik in het vak <strong>Contact</strong> onderaan de tabel. Druk <kbd>Ctrl</kbd> + <kbd>V</kbd>.
+          <span class="sub">Je kopieert deze zin. Hij blijft dus ook bovenaan staan.</span></li>
+        <li>Kijk nu naar het lijstje onder <em>Zo ontvang je een levering …</em>. Daar staat nog één zin die je nergens gebruikt hebt. Die hoort niet bij de procedure. Klik er 3 keer in en druk op <kbd>Backspace</kbd>.</li>
+      </ol>
+
+      <figure class="shot" data-shot="les1-opdracht-b-tabel.png" data-alt="Opdracht B: een zin wordt geplakt in het vak naast nummer 1 van de tabel" data-caption="Plak elke zin in het juiste vak van de tabel."></figure>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>In de tabel staan 6 zinnen. Vak 1 begint met <strong>Eerst</strong>, vak 6 met <strong>Tot slot</strong>.</li>
+          <li>De contactzin staat er nu <strong>twee keer</strong>: bovenaan en in het vak Contact.</li>
+          <li>De zin die er niet bij hoort, is weg: onder <em>Zo ontvang je een levering …</em> staat geen zin meer.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Welke zin hoort er niet bij?</summary>
+        <div class="hint-body"><p>De procedure gaat over een levering. Zoek de zin die niet over de levering gaat.</p></div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Er staat een lege regel in een vak</summary>
+        <div class="hint-body"><p>Klik op de lege regel en druk op <kbd>Backspace</kbd>. Lege regels boven de tabel mag je ook wissen.</p></div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? De volgorde van stap 2 en 3</summary>
+        <div class="hint-body"><p>Je kan de dozen pas vergelijken met de leveringsbon als je die bon al <strong>hebt</strong>.</p></div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-3"><label for="klaar-3">Klaar met stap 3</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="2">← Stap 2</button><button class="btn btn-primary" type="button" data-goto="4">Stap 4 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 4 ================= -->
+  <section class="pane" id="pane-4" aria-labelledby="h-4">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 4 van 5 · Opdracht C</p>
+        <h2 id="h-4">Een nota overtypen</h2>
+        <p class="goal">Je typt de nota van Tom uit het magazijn over. Je gebruikt de 4 typregels.</p>
+        <span class="time">± 8 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Opdracht C</span></div>
+
+      <div class="note">
+        <p><strong>De 4 typregels</strong></p>
+        <p>1. Typ door. Druk alleen op <kbd>Enter</kbd> aan het einde van een alinea.<br>
+        2. Eén spatie tussen woorden. Geen spatie vóór . , : ; ? ! Wel één spatie erna.<br>
+        3. Een hoofdletter aan het begin van een zin en bij een naam.<br>
+        4. Nooit extra spaties of Enters om tekst te verschuiven.</p>
+      </div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Bekijk de nota in Opdracht C. Het is een afbeelding: kopiëren kan niet.</li>
+        <li>Klik in het lege kader onder de nota.</li>
+        <li>Typ de nota over, woord voor woord. De tekst gaat vanzelf naar de volgende regel.</li>
+        <li>Druk alleen op <kbd>Enter</kbd> waar in de nota een nieuwe alinea begint.</li>
+        <li>Kijk naar de verborgen tekens. Verbeter wat niet klopt.</li>
+      </ol>
+
+      <div class="note warn">
+        <p><strong>Cijfers typen?</strong> Op dit toetsenbord typ je de cijfers bovenaan met <kbd>Shift</kbd>. Druk <kbd>Shift</kbd> + <kbd>&amp; 1</kbd> voor een 1. Je kan ook het cijferblok rechts gebruiken.</p>
+      </div>
+
+      <figure class="shot" data-shot="les1-nota-kader.png" data-alt="Opdracht C: de nota bovenaan en daaronder het kader waarin de leerling typt" data-caption="Typ in het kader onder de nota."></figure>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>De hele nota staat in het kader: de titel, 3 alinea's en de naam van Tom.</li>
+          <li>Alle data, uren en nummers zijn juist.</li>
+          <li>Je ziet een <span class="pil">¶</span> alleen aan het einde van een alinea.</li>
+          <li>Je ziet nergens <span class="dot">··</span> en nergens een <span class="dot">·</span> vóór een leesteken.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Speciale tekens</summary>
+        <div class="hint-body">
+          <p><kbd>é</kbd>, <kbd>è</kbd>, <kbd>ç</kbd> en <kbd>à</kbd> hebben een eigen toets in de bovenste rij.</p>
+          <p>Meer tekens staan op de <a href="#" data-open-theory="th-azerty">theoriekaart bij “Toetsenbord”</a>.</p>
+        </div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Mijn cijfers worden rare tekens</summary>
+        <div class="hint-body"><p>Je typt de cijfers zonder <kbd>Shift</kbd>. Wis de rare tekens met <kbd>Backspace</kbd>. Hou dan <kbd>Shift</kbd> ingedrukt en typ het cijfer opnieuw.</p></div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-4"><label for="klaar-4">Klaar met stap 4</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="3">← Stap 3</button><button class="btn btn-primary" type="button" data-goto="5">Stap 5 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 5 ================= -->
+  <section class="pane" id="pane-5" aria-labelledby="h-5">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 5 van 5</p>
+        <h2 id="h-5">Controleren en inleveren</h2>
+        <p class="goal">Je controleert je werk en je levert je werkdocument in.</p>
+        <span class="time">± 5 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument</span><span class="badge badge-web">🖥️ Lespagina</span><span class="badge badge-class">🏫 Google Classroom</span></div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Zoek in het hele werkdocument naar rode golflijnen. Verbeter elk fout woord met de <strong>rechtermuisknop</strong>. Een juiste naam, zoals NovaDepot of Tom, laat je staan.</li>
+        <li>Doorloop de controlelijst hieronder. Vink elk punt aan dat klopt. Klopt iets niet? Verbeter het eerst.</li>
+        <li>Beantwoord de 2 <strong>exitvragen</strong> onderaan je werkdocument.</li>
+        <li>Ga naar <strong>Google Classroom</strong>. Open de opdracht. Klik rechts op <span class="ui">Inleveren</span>. Klik in het venstertje nog eens op <span class="ui">Inleveren</span>.</li>
+      </ol>
+
+      <figure class="shot" data-shot="les1-classroom-inleveren.png" data-alt="Google Classroom: de knop Inleveren in het vak Jouw werk" data-caption="De knop Inleveren staat rechts in het vak ‘Jouw werk’."></figure>
+
+      <h3>Controlelijst</h3>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c1-a"><label for="c1-a">Opdracht A: 8 fouten verbeterd.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c1-b"><label for="c1-b">Opdracht B: 6 zinnen in de juiste volgorde, de contactzin gekopieerd, de extra zin gewist.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c1-c"><label for="c1-c">Opdracht C: de nota volledig overgetypt.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c1-d"><label for="c1-d">Geen rode golflijnen meer, behalve onder een juiste naam.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c1-e"><label for="c1-e">Verborgen tekens: geen ·· en geen ¶ midden in een zin.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c1-f"><label for="c1-f">De 2 exitvragen zijn beantwoord.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c1-g"><label for="c1-g">Mijn werkdocument is ingeleverd in Classroom.</label></div>
+
+      <div class="card finish" id="finish" role="status">
+        <p class="big">Alles afgevinkt!</p>
+        <p>Knap werk. Klaar en nog tijd over? Doe de <a href="#" data-goto="extra">extra opdracht</a>.</p>
+      </div>
+
+      <div class="pane-nav"><button class="btn" type="button" data-goto="4">← Stap 4</button><button class="btn" type="button" data-goto="extra">Extra →</button></div>
+      <p style="margin-top:1.2rem"><button class="btn" type="button" id="btnReset">↺ Vinkjes op deze pagina wissen</button><br><small>Je vinkjes worden alleen in deze browser op deze computer bewaard. Ze zijn geen bewijs: je leraar kijkt naar je werkdocument.</small></p>
+    </div>
+  </section>
+
+  <!-- ================= EXTRA ================= -->
+  <section class="pane" id="pane-extra" aria-labelledby="h-extra">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Extra · niet verplicht</p>
+        <h2 id="h-extra">Foutenjacht+: fouten die de computer niet ziet</h2>
+        <p class="goal">Je verbetert 4 fouten die de spellingcontrole níet aanduidt.</p>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Extra</span></div>
+      <p>Begin pas aan deze opdracht als je werkdocument is ingeleverd. Klik in Classroom op <span class="ui">Inlevering ongedaan maken</span>. Maak de extra opdracht. Lever daarna opnieuw in.</p>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Ga naar <strong>Extra</strong> onderaan je werkdocument.</li>
+        <li>Lees de 4 zinnen. Er staat geen enkele rode golflijn. Toch staat er in elke zin een fout.</li>
+        <li>Zoek in elke zin het werkwoord dat verkeerd geschreven is (d, t of dt). Verbeter het.</li>
+      </ol>
+
+      <details class="hint">
+        <summary>Hulp nodig? Hoe controleer ik d, t of dt?</summary>
+        <div class="hint-body">
+          <p>Vervang het onderwerp door <strong>hij</strong> of <strong>ik</strong>, of zet de zin in het verleden. Dan hoor je welke letter nodig is.</p>
+          <p>Voorbeeld: “De levering <em>word</em> geleverd.” → hij <strong>wordt</strong>.</p>
+        </div>
+      </details>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>Je hebt 4 werkwoorden verbeterd.</li>
+          <li>Je weet nu: de spellingcontrole ziet niet alles. Lees je tekst altijd zelf nog eens.</li>
+        </ul>
+      </div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-extra" data-optional><label for="klaar-extra">Extra opdracht gemaakt</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="5">← Stap 5</button><span></span></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= THEORIEKAART ================= -->
+<div class="scrim" id="scrim"></div>
+<aside class="theory" id="theory" aria-label="Theoriekaart">
+  <div class="theory-head"><h2>📖 Theoriekaart</h2><button class="theory-close" type="button">Sluiten ✕</button></div>
+  <div class="theory-body">
+    <nav class="theory-toc" aria-label="Inhoud theoriekaart">
+      <a href="#th-venster">Het venster</a><a href="#th-typregels">4 typregels</a><a href="#th-tekens">Verborgen tekens</a><a href="#th-selecteren">Selecteren</a><a href="#th-knippen">Knippen en plakken</a><a href="#th-herstel">Iets misgelopen?</a><a href="#th-spelling">Spelling</a><a href="#th-azerty">Toetsenbord</a><a href="#th-chromebook">Thuis op een Chromebook</a>
+    </nav>
+
+    <section id="th-venster">
+      <h3>Het venster van Google Documenten</h3>
+      <div class="table-wrap">
+      <table class="plain">
+        <tr><th>1. Documentnaam</th><td>Linksboven. Daarnaast staat een wolkje: je werk wordt <strong>vanzelf</strong> opgeslagen in Drive.</td></tr>
+        <tr><th>2. Menubalk</th><td>Bestand – Bewerken – Bekijken – Invoegen – Opmaak …</td></tr>
+        <tr><th>3. Werkbalk</th><td>De rij met knoppen: ongedaan maken, lettertype, vet …</td></tr>
+        <tr><th>4. Pagina</th><td>Het witte blad waarop je typt.</td></tr>
+        <tr><th>5. Cursor</th><td>Het knipperende streepje. Daar komt de letter die je typt.</td></tr>
+      </table>
+      </div>
+      <figure class="shot" data-shot="th-venster-onderdelen.png" data-alt="Het venster van Google Documenten met nummers bij documentnaam, menubalk, werkbalk, pagina en cursor" data-caption="De 5 delen van het venster."></figure>
+      <p><small>Word en LibreOffice Writer zijn ook tekstverwerkers. Ze hebben dezelfde delen, alleen zien de knoppen er anders uit.</small></p>
+    </section>
+
+    <section id="th-typregels">
+      <h3>De 4 typregels</h3>
+      <p><strong>1. Typ door. Druk alleen op Enter aan het einde van een alinea.</strong><br>De tekst gaat vanzelf naar de volgende regel.</p>
+      <div class="compare">
+        <div class="sample bad"><div class="sample-head">Fout: Enter aan elk regeleinde</div>
+          <div class="sample-page"><p>Vanaf maandag is het onthaal<span class="pil">¶</span></p><p>open van 7.30 uur tot 17.00<span class="pil">¶</span></p><p>uur.<span class="pil">¶</span></p></div></div>
+        <div class="sample goodx"><div class="sample-head">Goed: gewoon doortypen</div>
+          <div class="sample-page"><p>Vanaf maandag is het onthaal open van 7.30 uur tot 17.00 uur.<span class="pil">¶</span></p></div></div>
+      </div>
+      <p>Waarom? Voeg je later een woord toe, dan valt de foute tekst uit elkaar. De goede tekst schuift gewoon mee.</p>
+
+      <p><strong>2. Eén spatie tussen woorden. Geen spatie vóór . , : ; ? ! Wel één spatie erna.</strong></p>
+      <div class="compare">
+        <div class="sample bad"><div class="sample-head">Fout</div><div class="sample-page"><p>Vragen<span class="dot">·</span>?<span class="dot">··</span>Bel<span class="dot">·</span>het<span class="dot">·</span>onthaal<span class="dot">·</span>.</p></div></div>
+        <div class="sample goodx"><div class="sample-head">Goed</div><div class="sample-page"><p>Vragen?<span class="dot">·</span>Bel<span class="dot">·</span>het<span class="dot">·</span>onthaal.</p></div></div>
+      </div>
+
+      <p><strong>3. Een hoofdletter aan het begin van een zin en bij een naam.</strong><br>Hou <kbd>Shift</kbd> ingedrukt en typ de letter. Gebruik geen <kbd>Caps Lock</kbd>.</p>
+
+      <p><strong>4. Nooit extra spaties of Enters om tekst te verschuiven.</strong><br>Een titel in het midden zetten doe je met een knop. Dat leer je in les 2. Tussen twee alinea's staat hoogstens één lege regel.</p>
+      <div class="compare">
+        <div class="sample bad"><div class="sample-head">Fout: titel verschoven met spaties</div><div class="sample-page"><p><span class="dot">···············</span>Mededeling<span class="pil">¶</span></p></div></div>
+      </div>
+    </section>
+
+    <section id="th-tekens">
+      <h3>Verborgen tekens</h3>
+      <p>Menu <span class="ui">Bekijken</span> → <span class="ui">Opmaakmarkeringen tonen</span>. Doe het nog eens om ze weer te verbergen.</p>
+      <table class="plain">
+        <tr><th><span class="pil">¶</span></th><td>Hier werd op Enter gedrukt: het einde van een alinea.</td></tr>
+        <tr><th><span class="dot">·</span></th><td>Een spatie.</td></tr>
+      </table>
+      <p><small>Deze tekens zie je alleen op je scherm. Ze worden nooit afgedrukt.</small></p>
+    </section>
+
+    <section id="th-selecteren">
+      <h3>Selecteren</h3>
+      <p>Geselecteerde tekst wordt blauw. Daarna kan je hem wissen, knippen, kopiëren of opmaken.</p>
+      <table class="plain">
+        <tr><th>Eén woord</th><td>Dubbelklik op het woord.</td></tr>
+        <tr><th>Een alinea</th><td>Klik 3 keer in de alinea.</td></tr>
+        <tr><th>Een stuk tekst</th><td>Klik vóór de eerste letter. Hou de muisknop ingedrukt en sleep tot achter de laatste letter.</td></tr>
+        <tr><th>Van hier tot daar</th><td>Klik vóór de eerste letter. Hou <kbd>Shift</kbd> ingedrukt en klik achter de laatste letter.</td></tr>
+        <tr><th>Letter per letter</th><td><kbd>Shift</kbd> + <kbd>←</kbd> of <kbd>→</kbd></td></tr>
+        <tr><th>Alles</th><td><kbd>Ctrl</kbd> + <kbd>A</kbd></td></tr>
+      </table>
+      <p><strong>Let op:</strong> typ je iets terwijl er tekst geselecteerd is? Dan vervang je die tekst.</p>
+    </section>
+
+    <section id="th-knippen">
+      <h3>Knippen, kopiëren en plakken</h3>
+      <table class="plain">
+        <tr><th>Knippen <kbd>Ctrl</kbd> + <kbd>X</kbd></th><td>De tekst gaat weg en wacht in het klembord. Gebruik dit om tekst te <strong>verplaatsen</strong>.</td></tr>
+        <tr><th>Kopiëren <kbd>Ctrl</kbd> + <kbd>C</kbd></th><td>De tekst blijft staan. Een kopie gaat naar het klembord.</td></tr>
+        <tr><th>Plakken <kbd>Ctrl</kbd> + <kbd>V</kbd></th><td>De tekst komt waar je cursor staat.</td></tr>
+      </table>
+      <p><small>Deze sneltoetsen werken ook in Word, in je e-mail en in een rekenblad.</small></p>
+    </section>
+
+    <section id="th-herstel">
+      <h3>Iets misgelopen?</h3>
+      <table class="plain">
+        <tr><th>Ongedaan maken</th><td><kbd>Ctrl</kbd> + <kbd>Z</kbd> of de knop <span class="ui">↶</span></td></tr>
+        <tr><th>Opnieuw</th><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> of de knop <span class="ui">↷</span></td></tr>
+        <tr><th>Wissen links van de cursor</th><td><kbd>Backspace</kbd> <kbd>⟵</kbd></td></tr>
+        <tr><th>Wissen rechts van de cursor</th><td><kbd>Delete</kbd> (<kbd>Del</kbd>)</td></tr>
+      </table>
+    </section>
+
+    <section id="th-spelling">
+      <h3>Spelling controleren</h3>
+      <ul>
+        <li>Een <strong>rode golflijn</strong> onder een woord: de computer kent het woord niet.</li>
+        <li>Klik met de <strong>rechtermuisknop</strong> op het woord. Klik op het juiste woord.</li>
+        <li>Alles in één keer nakijken: menu <span class="ui">Extra</span> → <span class="ui">Spelling en grammatica</span>.</li>
+        <li>Een naam (NovaDepot, Tom) is soms rood. Is hij juist? Laat hem staan.</li>
+        <li><strong>Let op:</strong> de computer ziet niet alles. “Hij <em>word</em>” krijgt geen rode lijn, maar is fout. Lees je tekst altijd zelf na.</li>
+      </ul>
+    </section>
+
+    <section id="th-azerty">
+      <h3>Toetsenbord (AZERTY)</h3>
+      <table class="plain">
+        <tr><th>Cijfer bovenaan</th><td><kbd>Shift</kbd> + de toets. Of het cijferblok rechts.</td></tr>
+        <tr><th>é è ç à</th><td>Eigen toets in de bovenste rij, zonder <kbd>Shift</kbd>.</td></tr>
+        <tr><th>ë ï</th><td>Druk <kbd>Shift</kbd> + <kbd>¨ ^</kbd> (naast de P). Typ daarna de letter.</td></tr>
+        <tr><th>@</th><td><kbd>Alt Gr</kbd> + <kbd>é 2</kbd></td></tr>
+        <tr><th>€</th><td><kbd>Alt Gr</kbd> + <kbd>E</kbd></td></tr>
+      </table>
+    </section>
+
+    <section id="th-chromebook">
+      <h3>Thuis op een Chromebook</h3>
+      <p>Alle sneltoetsen met <kbd>Ctrl</kbd> werken hetzelfde. Dit is anders:</p>
+      <table class="plain">
+        <tr><th>Vensters naast elkaar</th><td>Sleep de bovenkant van een venster naar de linker- of rechterrand van het scherm. Laat los als je een schaduw ziet.</td></tr>
+        <tr><th>Wissen rechts van de cursor</th><td><kbd>Alt</kbd> + <kbd>Backspace</kbd></td></tr>
+      </table>
+    </section>
+  </div>
+</aside>
+</div>
+
+<footer class="site">
+  <img src="assets/dalton-gent-logo.png" alt="GO! Dalton Gent">
+  Toegepaste Informatica · 2de graad Organisatie en logistiek · NovaDepot is een fictief bedrijf.
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

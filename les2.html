@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tekstverwerking 2 · Tekst opmaken · NovaDepot</title>
+  <link rel="icon" href="assets/novadepot-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Voorbeeld van het eindproduct (voor en na) */
+    .doc-before, .doc-after { font-family: Arial, sans-serif; font-size: .9rem; line-height: 1.5; }
+    .doc-after { font-family: Verdana, Geneva, sans-serif; font-size: .82rem; }
+    .doc-after .t { font-size: 1.28rem; font-weight: 700; text-align: center; margin-bottom: .5rem; }
+    .doc-after .tt { font-size: .95rem; font-weight: 700; margin-top: .5rem; }
+    .doc-after ul { margin: .2rem 0 .4rem; padding-left: 1.3rem; }
+    .doc-after .r { text-align: right; }
+    .doc-before p, .doc-after p { margin: 0 0 .35rem; }
+    /* Schets van de werkbalk */
+    .toolbar-mock { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem; background: #EEF1FA; border: 1px solid #C7CDE6; border-radius: 22px; padding: .35rem .6rem; font-family: Arial, sans-serif; font-size: .88rem; }
+    .toolbar-mock .tb { position: relative; display: inline-flex; align-items: center; gap: .2rem; background: #fff; border: 1px solid #D5D9EA; border-radius: 6px; padding: .12rem .45rem; min-height: 28px; }
+    .toolbar-mock .sep { width: 1px; height: 22px; background: #C7CDE6; margin: 0 .15rem; }
+    .toolbar-mock .n { position: absolute; top: -.7rem; right: -.45rem; background: var(--navy); color: #fff; font-family: var(--head); font-weight: 800; font-size: .68rem; width: 1.15rem; height: 1.15rem; border-radius: 50%; display: grid; place-items: center; }
+    .legend td:first-child { width: 2rem; font-family: var(--head); font-weight: 800; color: var(--navy); }
+  </style>
+</head>
+<body data-storage="novadepot_tv2_">
+
+<div class="teacher-banner">Leraarweergave: de roze kaders tonen waar je een screenshot kan plaatsen. Leerlingen zien die kaders niet.</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" title="Naar het overzicht van de reeks">
+      <img src="assets/novadepot-logo.svg" alt="NovaDepot">
+      <span class="brand-lesson">Tekstverwerking 2 · Tekst opmaken</span>
+    </a>
+    <span class="topbar-spacer"></span>
+    <div class="progress-wrap" title="Jouw voortgang">
+      <div class="progress-track" role="progressbar" aria-label="Voortgang" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="progress-label" id="progressLabel">0 van 0</span>
+    </div>
+    <button class="btn-theory" type="button" data-open-theory>📖 Theoriekaart</button>
+    <img class="dalton-mark" src="assets/dalton-gent-logo.png" alt="GO! Dalton Gent">
+  </div>
+  <nav class="stepper" aria-label="Stappen">
+    <button type="button" data-step="start"><span class="num"><span>i</span></span><span class="lbl">Start</span></button>
+    <button type="button" data-step="1"><span class="num"><span>1</span></span><span class="lbl">Klaarzetten</span></button>
+    <button type="button" data-step="2"><span class="num"><span>2</span></span><span class="lbl">Titels</span></button>
+    <button type="button" data-step="3"><span class="num"><span>3</span></span><span class="lbl">Opsomming</span></button>
+    <button type="button" data-step="4"><span class="num"><span>4</span></span><span class="lbl">Nadruk</span></button>
+    <button type="button" data-step="5"><span class="num"><span>5</span></span><span class="lbl">Deel B</span></button>
+    <button type="button" data-step="6"><span class="num"><span>6</span></span><span class="lbl">Inleveren</span></button>
+    <button type="button" data-step="extra" class="extra"><span class="num"><span>+</span></span><span class="lbl">Extra</span></button>
+  </nav>
+</header>
+
+<div class="layout">
+<main id="main">
+
+  <!-- ================= START ================= -->
+  <section class="pane" id="pane-start" aria-labelledby="h-start">
+    <div class="card">
+      <p class="pane-kicker">Tekstverwerking · les 2 van 2</p>
+      <h1 id="h-start">Tekst opmaken volgens de huisstijl</h1>
+      <p>Vorige les typte je de nota van Tom. De tekst is nu juist, maar hij ziet er saai uit. Niemand leest hem aan de muur.</p>
+      <p>NovaDepot heeft een <button class="term" type="button">huisstijl</button>: vaste afspraken over hoe documenten eruitzien. Vandaag maak jij twee mededelingen op volgens die huisstijl.</p>
+
+      <h3>Voor en na</h3>
+      <div class="compare">
+        <div class="sample"><div class="sample-head" style="background:var(--sand)">Voor: alleen tekst</div>
+          <div class="sample-page doc-before">
+            <p>Nieuwe regeling voor laden en lossen</p>
+            <p>Vanaf maandag 12 oktober laden en lossen we alleen nog aan poort 3 en poort 4. Poort 1 en poort 2 zijn in herstelling tot vrijdag 30 oktober.</p>
+            <p>Wat moet je doen?</p>
+            <p>Meld je bij aankomst eerst aan bij het onthaal.</p>
+            <p>Wacht tot je hoort aan welke poort je mag lossen.</p>
+            <p>…</p>
+          </div></div>
+        <div class="sample goodx"><div class="sample-head">Na: volgens de huisstijl</div>
+          <div class="sample-page doc-after">
+            <p class="t">Nieuwe regeling voor laden en lossen</p>
+            <p>Vanaf <strong>maandag 12 oktober</strong> laden en lossen we alleen nog aan <strong>poort 3 en poort 4</strong>. Poort 1 en poort 2 zijn in herstelling tot vrijdag 30 oktober.</p>
+            <p class="tt">Wat moet je doen?</p>
+            <ul><li>Meld je bij aankomst eerst aan bij het onthaal.</li><li>Wacht tot je hoort aan welke poort je mag lossen.</li><li>…</li></ul>
+            <p class="r">Tom Peeters, magazijn – 5 oktober 2026</p>
+          </div></div>
+      </div>
+      <p><strong>Let op:</strong> de woorden zijn precies dezelfde. Alleen de <button class="term" type="button">opmaak</button> is veranderd.</p>
+
+      <h3>Op het einde van deze les kan je</h3>
+      <ul>
+        <li>uitleggen wat het verschil is tussen de tekst en de opmaak;</li>
+        <li>tekst opmaken: <button class="term" type="button">lettertype</button>, <button class="term" type="button">lettergrootte</button>, vet, <button class="term" type="button">uitlijnen</button> en een <button class="term" type="button">opsomming</button>;</li>
+        <li>zelf een document opmaken met alleen de huisstijlkaart;</li>
+        <li>dezelfde knoppen terugvinden in een andere tekstverwerker.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Zo werk je</h2>
+      <table class="plain">
+        <tr><th><span class="badge badge-web">🖥️ Lespagina</span></th><td>Deze website, <strong>links</strong> op je scherm. Hier lees je wat je moet doen.</td></tr>
+        <tr><th><span class="badge badge-doc">📄 Werkdocument</span></th><td>Jouw Google-document <strong>TV2_Tekst-opmaken</strong>, <strong>rechts</strong> op je scherm. Hier maak je de opdrachten.</td></tr>
+      </table>
+      <div class="note" style="margin-top:1rem">
+        <p><strong>De gouden regel:</strong> eerst <button class="term" type="button">selecteren</button>, dan de knop kiezen.</p>
+      </div>
+      <div class="note">
+        <p><strong>Vast je?</strong> 1. Kijk op de theoriekaart. &nbsp;2. Open de hint (💡). &nbsp;3. Vraag het aan je buur. &nbsp;4. Vraag het aan de leraar.</p>
+      </div>
+      <h3>Overzicht</h3>
+      <div class="table-wrap">
+      <table class="plain">
+        <thead><tr><th>Stap</th><th>Wat doe je?</th><th>Tijd</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Klaarzetten, lettertype en lettergrootte van deel A</td><td>6 min.</td></tr>
+          <tr><td>2</td><td>Titel en tussentitel</td><td>5 min.</td></tr>
+          <tr><td>3</td><td>Een opsomming maken</td><td>3 min.</td></tr>
+          <tr><td>4</td><td>Nadruk en uitlijning</td><td>4 min.</td></tr>
+          <tr><td>5</td><td>Deel B zelfstandig opmaken</td><td>10 min.</td></tr>
+          <tr><td>6</td><td>Controleren en inleveren</td><td>5 min.</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top:.8rem"><strong>Wat lever je in?</strong> Alleen je werkdocument, via Google Classroom.</p>
+    </div>
+
+    <div class="card">
+      <h2>Weet je het nog? (les 1)</h2>
+      <p>Probeer het eerst zonder de theoriekaart. Je antwoorden worden nergens bewaard.</p>
+      <div class="quiz">
+        <div class="quiz-q" data-ok="Juist! Enter alleen aan het einde van een alinea." data-nok="Nog niet. Denk aan typregel 1.">
+          <p>1. Wat betekent het teken ¶ in je document?</p>
+          <div class="opts">
+            <button type="button">Hier staat een spatie.</button>
+            <button type="button" data-right>Hier werd op Enter gedrukt: het einde van een alinea.</button>
+            <button type="button">Hier staat een fout.</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+        <div class="quiz-q" data-ok="Juist! Dubbelklikken selecteert één woord." data-nok="Nog niet. Kijk op de theoriekaart bij ‘Selecteren’.">
+          <p>2. Hoe selecteer je snel één woord?</p>
+          <div class="opts">
+            <button type="button" data-right>Dubbelklikken op het woord.</button>
+            <button type="button">Ctrl + A.</button>
+            <button type="button">3 keer klikken.</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+        <div class="quiz-q" data-ok="Juist! Een titel centreer je met de knop. Spaties verschuiven mee als de tekst verandert." data-nok="Nog niet. Denk aan typregel 4.">
+          <p>3. Hoe zet je een titel in het midden?</p>
+          <div class="opts">
+            <button type="button">Met spaties vóór de titel.</button>
+            <button type="button">Met de Tab-toets.</button>
+            <button type="button" data-right>Met de knop Centreren.</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="pane-nav"><span></span><button class="btn btn-primary" type="button" data-goto="1">Start met stap 1 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 1 ================= -->
+  <section class="pane" id="pane-1" aria-labelledby="h-1">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 1 van 6 · Deel A</p>
+        <h2 id="h-1">Klaarzetten, lettertype en lettergrootte</h2>
+        <p class="goal">Je geeft alle tekst van deel A het lettertype Verdana en de grootte 12.</p>
+        <span class="time">± 6 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-class">🏫 Google Classroom</span><span class="badge badge-doc">📄 Werkdocument · Deel A</span></div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Open in Classroom de opdracht <strong>Tekstverwerking 2 — Tekst opmaken</strong>. Open je werkdocument <strong>TV2_Tekst-opmaken</strong>. Zet de vensters naast elkaar, zoals in les 1.</li>
+        <li>Typ je <strong>naam</strong> en je <strong>klas</strong> op de lijnen bovenaan.</li>
+        <li>Selecteer alle tekst van deel A. Klik vóór de eerste letter van de titel. Hou <kbd>Shift</kbd> ingedrukt. Klik achter het laatste woord van deel A (<em>… 5 oktober 2026</em>).</li>
+        <li>Klik in de <button class="term" type="button">werkbalk</button> op het vak met <span class="ui">Arial</span>. Kies <span class="ui">Verdana</span>.</li>
+        <li>Klik op het getal <span class="ui">11</span> naast het lettertype. Typ <strong>12</strong> en druk op <kbd>Enter</kbd>.</li>
+      </ol>
+
+      <div class="note warn"><p><strong>Gebruik hier geen <kbd>Ctrl</kbd> + <kbd>A</kbd>.</strong> Dan selecteer je ook deel B en de vragen. Deel B maak je later zelf op.</p></div>
+
+      <figure class="shot" data-shot="les2-werkbalk-lettertype.png" data-alt="Werkbalk met het vak voor het lettertype (Arial) en het vak voor de lettergrootte (11) aangeduid" data-caption="Links het lettertype, rechts de lettergrootte."></figure>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>Klik ergens in deel A. In de werkbalk staat <strong>Verdana</strong> en <strong>12</strong>.</li>
+          <li>Deel B (pagina 2) staat nog in Arial.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Ik zie Verdana niet in de lijst</summary>
+        <div class="hint-body"><p>Scrol in de lijst naar beneden. De lettertypes staan in alfabetische volgorde: Verdana staat onderaan.</p></div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Ik zie het vak met 11 niet</summary>
+        <div class="hint-body"><p>Je venster is te smal. Klik rechts in de werkbalk op <span class="ui">⋮</span> (meer). Daar staan de knoppen die niet meer passen. Of maak je venster wat breder.</p></div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-1"><label for="klaar-1">Klaar met stap 1</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="start">← Start</button><button class="btn btn-primary" type="button" data-goto="2">Stap 2 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 2 ================= -->
+  <section class="pane" id="pane-2" aria-labelledby="h-2">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 2 van 6 · Deel A</p>
+        <h2 id="h-2">De titel en de tussentitel</h2>
+        <p class="goal">Je maakt de titel groot, vet en gecentreerd. Je maakt de tussentitel vet.</p>
+        <span class="time">± 5 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Deel A</span></div>
+
+      <h3>A. De titel <em>Nieuwe regeling voor laden en lossen</em></h3>
+      <ol class="todo">
+        <li>Klik <strong>3 keer</strong> in de titel. De titel wordt blauw.</li>
+        <li>Zet de lettergrootte op <strong>20</strong>.</li>
+        <li>Klik op <span class="ui">B</span> (vet). Of druk <kbd>Ctrl</kbd> + <kbd>B</kbd>.</li>
+        <li>Zet de titel in het midden. Dat kan op twee manieren. Kies zelf.
+          <span class="sub"><strong>Manier 1 – met de werkbalk.</strong> Zoek in de werkbalk de knop met de <strong>streepjes en een pijltje ▾</strong>: dat is de knop <span class="ui">Uitlijnen</span>. Klik erop. Er klappen 4 knopjes open. Klik op het <strong>tweede</strong>: <span class="ui">Centreren</span>. Zie de foto hieronder.<br>
+          <strong>Manier 2 – met de menubalk.</strong> Klik bovenaan op <span class="ui">Opmaak</span>. Ga naar <span class="ui">Uitlijning en inspringen</span>. Klik op <span class="ui">Centreren</span>.<br>
+          Sneltoets: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>.</span></li>
+      </ol>
+
+      <figure class="shot" data-shot="les2-knop-uitlijnen.png" data-alt="De knop Uitlijnen in de werkbalk van Google Documenten, opengeklapt met de vier knopjes: links, centreren, rechts en uitvullen" data-caption="De knop Uitlijnen in de werkbalk. Klik op het pijltje ▾: links – centreren – rechts – uitvullen."></figure>
+
+      <h3>B. De tussentitel <em>Wat moet je doen?</em></h3>
+      <ol class="todo">
+        <li>Klik <strong>3 keer</strong> in de tussentitel.</li>
+        <li>Zet de lettergrootte op <strong>14</strong> en klik op <span class="ui">B</span> (vet).</li>
+      </ol>
+
+      <figure class="shot" data-shot="les2-knop-centreren.png" data-alt="Werkbalk met de knoppen voor vet en voor uitlijnen aangeduid" data-caption="De knop vet (B) en de knoppen om uit te lijnen."></figure>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>De titel is 20 pt, vet en staat in het midden.</li>
+          <li>De tussentitel is 14 pt en vet. Hij staat links.</li>
+          <li>Zet de verborgen tekens aan. Vóór de titel staat géén <span class="dot">·</span>.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Er is niets veranderd</summary>
+        <div class="hint-body"><p>Je was vergeten te selecteren. Klik 3 keer in de titel, zodat hij blauw wordt. Kies daarna opnieuw de knop.</p></div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Ik zie de knop Centreren niet</summary>
+        <div class="hint-body">
+          <p>In een smal venster zitten de 4 knoppen om uit te lijnen samen achter <strong>één</strong> knop <span class="ui">Uitlijnen</span>, met een pijltje ▾ ernaast. Klik op dat pijltje: dan klappen de 4 knopjes open.</p>
+          <p>Vind je die knop niet? Klik dan rechts in de werkbalk op <span class="ui">⋮</span> (meer).</p>
+          <p>Lukt het nog niet? Gebruik dan de menubalk: <span class="ui">Opmaak</span> → <span class="ui">Uitlijning en inspringen</span> → <span class="ui">Centreren</span>. Die weg werkt altijd, ook in een smal venster.</p>
+        </div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-2"><label for="klaar-2">Klaar met stap 2</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="1">← Stap 1</button><button class="btn btn-primary" type="button" data-goto="3">Stap 3 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 3 ================= -->
+  <section class="pane" id="pane-3" aria-labelledby="h-3">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 3 van 6 · Deel A</p>
+        <h2 id="h-3">Een opsomming maken</h2>
+        <p class="goal">Je maakt van 3 losse regels een lijst met bolletjes.</p>
+        <span class="time">± 3 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Deel A</span></div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Zoek de 3 regels onder <em>Wat moet je doen?</em></li>
+        <li>Selecteer de 3 regels. Klik vóór <em>Meld</em>. Hou <kbd>Shift</kbd> ingedrukt. Klik achter <em>… aan de poort.</em></li>
+        <li>Klik in de werkbalk op <span class="ui">Lijst met opsommingstekens</span>. Dat is de knop met bolletjes en streepjes.</li>
+      </ol>
+
+      <figure class="shot" data-shot="les2-knop-opsomming.png" data-alt="Werkbalk met de knop Lijst met opsommingstekens aangeduid" data-caption="De knop Lijst met opsommingstekens."></figure>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>Voor elk van de 3 regels staat een bolletje (•).</li>
+          <li>Je hebt zelf geen streepje (-) of sterretje (*) getypt.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Waarom geen streepjes typen?</summary>
+        <div class="hint-body"><p>Een zelf getypt streepje is gewoon een teken. Een echte opsomming zet elke regel netjes onder de vorige, ook als de regel te lang wordt. En je kan de bolletjes in één klik veranderen.</p></div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Er staat nu ook een bolletje voor de tussentitel</summary>
+        <div class="hint-body"><p>Je selecteerde te veel. Druk <kbd>Ctrl</kbd> + <kbd>Z</kbd> en selecteer opnieuw: alleen de 3 regels.</p></div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-3"><label for="klaar-3">Klaar met stap 3</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="2">← Stap 2</button><button class="btn btn-primary" type="button" data-goto="4">Stap 4 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 4 ================= -->
+  <section class="pane" id="pane-4" aria-labelledby="h-4">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 4 van 6 · Deel A</p>
+        <h2 id="h-4">Nadruk en uitlijning</h2>
+        <p class="goal">Je zet de 2 belangrijkste woordgroepen in vet. Je zet de laatste regel rechts.</p>
+        <span class="time">± 4 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Deel A</span></div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Selecteer <strong>maandag 12 oktober</strong> in de eerste alinea: sleep met de muis over de woorden. Druk <kbd>Ctrl</kbd> + <kbd>B</kbd>.</li>
+        <li>Selecteer <strong>poort 3 en poort 4</strong>. Druk <kbd>Ctrl</kbd> + <kbd>B</kbd>.</li>
+        <li>Klik in de laatste regel: <em>Tom Peeters, magazijn – 5 oktober 2026</em>.</li>
+        <li>Zet die regel helemaal rechts. Je gebruikt dezelfde plaats als in stap 2.
+          <span class="sub"><strong>Manier 1 – met de werkbalk.</strong> Klik op de knop <span class="ui">Uitlijnen</span> (streepjes met een pijltje ▾). Klik op het <strong>derde</strong> knopje: <span class="ui">Rechts uitlijnen</span>.<br>
+          <strong>Manier 2 – met de menubalk.</strong> <span class="ui">Opmaak</span> → <span class="ui">Uitlijning en inspringen</span> → <span class="ui">Rechts uitlijnen</span>.<br>
+          Sneltoets: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>.</span></li>
+      </ol>
+
+      <figure class="shot" data-shot="les2-knop-uitlijnen.png" data-alt="De knop Uitlijnen in de werkbalk van Google Documenten, opengeklapt met de vier knopjes: links, centreren, rechts en uitvullen" data-caption="Het derde knopje is Rechts uitlijnen."></figure>
+
+      <div class="note"><p><strong>Waarom maar 2?</strong> Zet je alles in vet, dan valt niets meer op. Nadruk werkt alleen als je hem spaarzaam gebruikt.</p></div>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>In de tekst staan precies 2 woordgroepen in vet (de titels niet meegeteld).</li>
+          <li>Niets is onderstreept.</li>
+          <li>De laatste regel staat helemaal rechts.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Voor uitlijnen hoef je niet te selecteren?</summary>
+        <div class="hint-body"><p>Klopt. Uitlijnen werkt altijd voor de hele alinea waarin je cursor staat. Klikken in de regel is genoeg.</p></div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-4"><label for="klaar-4">Klaar met stap 4 — deel A is af</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="3">← Stap 3</button><button class="btn btn-primary" type="button" data-goto="5">Stap 5 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 5 ================= -->
+  <section class="pane" id="pane-5" aria-labelledby="h-5">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 5 van 6 · Deel B</p>
+        <h2 id="h-5">Deel B zelfstandig opmaken</h2>
+        <p class="goal">Je maakt de mededeling <em>Veilig werken in het magazijn</em> op. Je gebruikt alleen de huisstijlkaart.</p>
+        <span class="time">± 10 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument · Deel B (pagina 2)</span></div>
+
+      <p>Nu zijn er geen stappen meer. Je kent alle knoppen al. Werk de huisstijlkaart regel per regel af.</p>
+
+      <div class="style-card" id="huisstijl-b">
+        <div class="style-card-head"><img src="assets/novadepot-logo.svg" alt="">Huisstijlkaart NovaDepot</div>
+        <table>
+          <tr><th>Lettertype</th><td>Verdana, voor alle tekst</td></tr>
+          <tr><th>Titel</th><td>20 pt, vet, gecentreerd</td></tr>
+          <tr><th>Tussentitel</th><td>14 pt, vet, links</td></tr>
+          <tr><th>Gewone tekst</th><td>12 pt, links uitgelijnd</td></tr>
+          <tr><th>Lijst</th><td>Lijst met opsommingstekens (•)</td></tr>
+          <tr><th>Nadruk</th><td>Maximaal 2 woordgroepen vet. Nooit onderstrepen.</td></tr>
+          <tr><th>Laatste regel (afzender en datum)</th><td>Rechts uitgelijnd</td></tr>
+        </table>
+      </div>
+
+      <div class="note"><p><strong>In deel B zijn dit de 2 belangrijkste woorden:</strong> <em>veiligheidsschoenen</em> en <em>fluohesje</em>.</p></div>
+
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>Alle tekst van deel B staat in Verdana.</li>
+          <li>De titel is 20 pt, vet en gecentreerd.</li>
+          <li>De tussentitel is 14 pt en vet. De gewone tekst is 12 pt.</li>
+          <li>De 5 afspraken staan in een lijst met bolletjes.</li>
+          <li>Alleen <em>veiligheidsschoenen</em> en <em>fluohesje</em> zijn vet in de tekst.</li>
+          <li>De laatste regel staat rechts.</li>
+        </ul>
+      </div>
+
+      <details class="hint">
+        <summary>Hulp nodig? Ik weet niet meer hoe het moet</summary>
+        <div class="hint-body">
+          <p>Kijk terug naar de stap met dezelfde opmaak:</p>
+          <p><a href="#" data-goto="1">Lettertype en grootte → stap 1</a><br><a href="#" data-goto="2">Titel en tussentitel → stap 2</a><br><a href="#" data-goto="3">Opsomming → stap 3</a><br><a href="#" data-goto="4">Vet en rechts uitlijnen → stap 4</a></p>
+        </div>
+      </details>
+      <details class="hint">
+        <summary>Hulp nodig? Welke regel is de tussentitel?</summary>
+        <div class="hint-body"><p>De tussentitel is de korte regel boven de 5 afspraken: <em>Onze vijf afspraken</em>.</p></div>
+      </details>
+
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-5"><label for="klaar-5">Klaar met stap 5 — deel B is af</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="4">← Stap 4</button><button class="btn btn-primary" type="button" data-goto="6">Stap 6 →</button></div>
+    </div>
+  </section>
+
+  <!-- ================= STAP 6 ================= -->
+  <section class="pane" id="pane-6" aria-labelledby="h-6">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Stap 6 van 6</p>
+        <h2 id="h-6">Controleren en inleveren</h2>
+        <p class="goal">Je controleert beide delen met de controlelijst en je levert je werkdocument in.</p>
+        <span class="time">± 5 minuten</span>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument</span><span class="badge badge-web">🖥️ Lespagina</span><span class="badge badge-class">🏫 Google Classroom</span></div>
+
+      <h3>Wat moet je doen?</h3>
+      <ol class="todo">
+        <li>Zet de verborgen tekens aan. Zoek spaties of lege regels die tekst verschuiven. Wis ze.</li>
+        <li>Doorloop de controlelijst hieronder. Vink elk punt aan dat klopt, voor deel A én deel B.</li>
+        <li>Beantwoord de 2 <strong>exitvragen</strong> onderaan je werkdocument.</li>
+        <li>Ga naar <strong>Google Classroom</strong>. Klik op <span class="ui">Inleveren</span> en bevestig.</li>
+      </ol>
+
+      <h3>Controlelijst</h3>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-a"><label for="c2-a">Alle tekst van deel A en B staat in Verdana.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-b"><label for="c2-b">De titels zijn 20 pt, vet en gecentreerd met de knop.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-c"><label for="c2-c">De tussentitels zijn 14 pt en vet. De gewone tekst is 12 pt en staat links.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-d"><label for="c2-d">De lijsten hebben echte opsommingstekens.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-e"><label for="c2-e">Per deel zijn maximaal 2 woordgroepen vet. Niets is onderstreept.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-f"><label for="c2-f">De laatste regel van deel A en deel B staat rechts.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-g"><label for="c2-g">Geen extra spaties of Enters om tekst te verschuiven.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-h"><label for="c2-h">De 2 exitvragen zijn beantwoord.</label></div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="c2-i"><label for="c2-i">Mijn werkdocument is ingeleverd in Classroom.</label></div>
+
+      <div class="note">
+        <p><strong>Iets helemaal mislukt?</strong> Selecteer de tekst en kies menu <span class="ui">Opmaak</span> → <span class="ui">Opmaak wissen</span>. De tekst krijgt weer de gewone opmaak. Begin dan opnieuw.</p>
+      </div>
+
+      <div class="card finish" id="finish" role="status">
+        <p class="big">Alles afgevinkt!</p>
+        <p>Knap werk. Nog tijd over? Doe de <a href="#" data-goto="extra">extra opdracht</a>.</p>
+      </div>
+
+      <div class="pane-nav"><button class="btn" type="button" data-goto="5">← Stap 5</button><button class="btn" type="button" data-goto="extra">Extra →</button></div>
+      <p style="margin-top:1.2rem"><button class="btn" type="button" id="btnReset">↺ Vinkjes op deze pagina wissen</button><br><small>Je vinkjes worden alleen in deze browser op deze computer bewaard. Ze zijn geen bewijs: je leraar kijkt naar je werkdocument.</small></p>
+    </div>
+  </section>
+
+  <!-- ================= EXTRA ================= -->
+  <section class="pane" id="pane-extra" aria-labelledby="h-extra">
+    <div class="card">
+      <div class="pane-head">
+        <p class="pane-kicker">Extra · niet verplicht</p>
+        <h2 id="h-extra">De titels in de NovaDepot-kleur</h2>
+        <p class="goal">Je geeft de twee titels de blauwe kleur van NovaDepot. Daarna kopieer je die opmaak met de verfroller.</p>
+      </div>
+      <div class="where"><span class="where-label">Waar werk je?</span><span class="badge badge-doc">📄 Werkdocument</span></div>
+      <p>Begin pas als je werkdocument is ingeleverd. Klik in Classroom op <span class="ui">Inlevering ongedaan maken</span>. Lever daarna opnieuw in.</p>
+
+      <h3>A. Een eigen kleur maken</h3>
+      <ol class="todo">
+        <li>Selecteer de titel van deel A.</li>
+        <li>Klik in de werkbalk op de knop <span class="ui">A</span> met het streepje eronder (tekstkleur).</li>
+        <li>Klik onder <span class="ui">Aangepast</span> op het plusteken <span class="ui">+</span>.</li>
+        <li>Typ in het vak <strong>Hex</strong> de code <strong>3C51A0</strong>. Klik op <span class="ui">OK</span>.</li>
+      </ol>
+      <h3>B. De opmaak kopiëren</h3>
+      <ol class="todo">
+        <li>Klik in de titel van deel A.</li>
+        <li>Klik in de werkbalk op de <strong>verfroller</strong> (<span class="ui">Opmaak kopiëren</span>).</li>
+        <li>Sleep over de titel van deel B. Die krijgt nu dezelfde opmaak.</li>
+      </ol>
+      <div class="check-self">
+        <h3>Controleer jezelf</h3>
+        <ul>
+          <li>Beide titels zijn NovaDepot-blauw, 20 pt, vet en gecentreerd.</li>
+          <li>De rest van de tekst is zwart gebleven.</li>
+        </ul>
+      </div>
+      <div class="done-box"><input type="checkbox" class="js-check" id="klaar-extra" data-optional><label for="klaar-extra">Extra opdracht gemaakt</label></div>
+      <div class="pane-nav"><button class="btn" type="button" data-goto="6">← Stap 6</button><span></span></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= THEORIEKAART ================= -->
+<div class="scrim" id="scrim"></div>
+<aside class="theory" id="theory" aria-label="Theoriekaart">
+  <div class="theory-head"><h2>📖 Theoriekaart</h2><button class="theory-close" type="button">Sluiten ✕</button></div>
+  <div class="theory-body">
+    <nav class="theory-toc" aria-label="Inhoud theoriekaart">
+      <a href="#th-regel">Gouden regel</a><a href="#th-werkbalk">De werkbalk</a><a href="#th-huisstijl">Huisstijlkaart</a><a href="#th-uitlijnen">Uitlijnen</a><a href="#th-fouten">Veelgemaakte fouten</a><a href="#th-ander">Ander programma</a><a href="#th-les1">Uit les 1</a>
+    </nav>
+
+    <section id="th-regel">
+      <h3>Tekst en opmaak</h3>
+      <p><strong>Tekst</strong> = de woorden. <strong>Opmaak</strong> = hoe de woorden eruitzien.</p>
+      <p>De gouden regel: <strong>eerst selecteren, dan de knop kiezen.</strong> Selecteer je niets? Dan geldt de opmaak alleen voor wat je daarna typt.</p>
+    </section>
+
+    <section id="th-werkbalk">
+      <h3>De werkbalk</h3>
+      <div class="toolbar-mock" aria-hidden="true">
+        <span class="tb">↶ ↷</span><span class="sep"></span>
+        <span class="tb">Verdana ▾<span class="n">1</span></span>
+        <span class="tb">− 12 +<span class="n">2</span></span><span class="sep"></span>
+        <span class="tb"><b>B</b> <i>I</i> <u>U</u><span class="n">3</span></span>
+        <span class="tb"><span style="text-decoration:underline 3px #3C51A0">A</span><span class="n">4</span></span><span class="sep"></span>
+        <span class="tb">≡ ≡ ≡ ≡<span class="n">5</span></span>
+        <span class="tb">•≡<span class="n">6</span></span>
+        <span class="tb">T̶ₓ<span class="n">7</span></span>
+        <span class="tb">⋮<span class="n">8</span></span>
+      </div>
+      <p><small>Een schets. In Google Documenten zien de knoppen er iets anders uit.</small></p>
+      <table class="plain legend">
+        <tr><td>1</td><td><strong>Lettertype</strong> – de vorm van de letters.</td></tr>
+        <tr><td>2</td><td><strong>Lettergrootte</strong> in punt (pt). Klik op het getal en typ een nieuw getal.</td></tr>
+        <tr><td>3</td><td><strong>Vet</strong> <kbd>Ctrl</kbd>+<kbd>B</kbd> · <strong>Cursief</strong> <kbd>Ctrl</kbd>+<kbd>I</kbd> · <strong>Onderstrepen</strong> <kbd>Ctrl</kbd>+<kbd>U</kbd></td></tr>
+        <tr><td>4</td><td><strong>Tekstkleur</strong></td></tr>
+        <tr><td>5</td><td><strong>Uitlijnen</strong>: links, centreren, rechts, uitvullen. In een smal venster is dit één knop.</td></tr>
+        <tr><td>6</td><td><strong>Lijst met opsommingstekens</strong> (bolletjes)</td></tr>
+        <tr><td>7</td><td><strong>Opmaak wissen</strong>: de tekst krijgt weer de gewone opmaak.</td></tr>
+        <tr><td>8</td><td><strong>Meer</strong>: knoppen die niet passen in een smal venster.</td></tr>
+      </table>
+      <figure class="shot" data-shot="th-werkbalk.png" data-alt="Echte werkbalk van Google Documenten met de knoppen 1 tot 8 genummerd" data-caption="De werkbalk van Google Documenten."></figure>
+    </section>
+
+    <section id="th-huisstijl">
+      <h3>Huisstijlkaart NovaDepot</h3>
+      <div class="style-card">
+        <div class="style-card-head"><img src="assets/novadepot-logo.svg" alt="">Huisstijl</div>
+        <table>
+          <tr><th>Lettertype</th><td>Verdana, voor alle tekst</td></tr>
+          <tr><th>Titel</th><td>20 pt, vet, gecentreerd</td></tr>
+          <tr><th>Tussentitel</th><td>14 pt, vet, links</td></tr>
+          <tr><th>Gewone tekst</th><td>12 pt, links uitgelijnd</td></tr>
+          <tr><th>Lijst</th><td>Lijst met opsommingstekens (•)</td></tr>
+          <tr><th>Nadruk</th><td>Maximaal 2 woordgroepen vet. Nooit onderstrepen.</td></tr>
+          <tr><th>Laatste regel</th><td>Rechts uitgelijnd</td></tr>
+        </table>
+      </div>
+      <p><small>Elk bedrijf kiest zijn eigen huisstijl. Een ander bedrijf kan dus andere afspraken hebben.</small></p>
+    </section>
+
+    <section id="th-uitlijnen">
+      <h3>Uitlijnen</h3>
+      <p><strong>Waar vind je het?</strong></p>
+      <ul>
+        <li><strong>In de werkbalk:</strong> de knop <span class="ui">Uitlijnen</span> — streepjes met een pijltje ▾. Klik erop en kies een van de 4 knopjes.</li>
+        <li><strong>In de menubalk:</strong> <span class="ui">Opmaak</span> → <span class="ui">Uitlijning en inspringen</span>. Daar staan dezelfde 4 mogelijkheden.</li>
+      </ul>
+      <figure class="shot" data-shot="les2-knop-uitlijnen.png" data-alt="De knop Uitlijnen in de werkbalk van Google Documenten, opengeklapt met de vier knopjes: links, centreren, rechts en uitvullen" data-caption="Links – centreren – rechts – uitvullen."></figure>
+      <table class="plain">
+        <tr><th>Links</th><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd></td><td>Gewone tekst</td></tr>
+        <tr><th>Centreren</th><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd></td><td>Titel</td></tr>
+        <tr><th>Rechts</th><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td><td>Afzender en datum</td></tr>
+        <tr><th>Uitvullen</th><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd></td><td>Recht aan beide kanten</td></tr>
+      </table>
+      <p>Uitlijnen werkt voor de hele alinea waarin je cursor staat.</p>
+    </section>
+
+    <section id="th-fouten">
+      <h3>Veelgemaakte fouten</h3>
+      <table class="plain">
+        <tr><th>Er verandert niets</th><td>Je vergat te selecteren.</td></tr>
+        <tr><th>Titel met spaties in het midden gezet</th><td>Wis de spaties. Gebruik de knop Centreren.</td></tr>
+        <tr><th>Zelf streepjes getypt</th><td>Wis ze. Gebruik de knop Lijst met opsommingstekens.</td></tr>
+        <tr><th>Alles vet of in hoofdletters</th><td>Dan valt niets meer op. Maximaal 2 woordgroepen vet.</td></tr>
+        <tr><th>Een woord onderstreept voor nadruk</th><td>Het lijkt op een link. Gebruik vet.</td></tr>
+        <tr><th>Een knop is weg</th><td>Klik op <span class="ui">⋮</span> rechts in de werkbalk, of maak je venster breder. Uitlijnen vind je ook via <span class="ui">Opmaak</span> → <span class="ui">Uitlijning en inspringen</span>.</td></tr>
+      </table>
+    </section>
+
+    <section id="th-ander">
+      <h3>Dezelfde knoppen in een ander programma</h3>
+      <p>In Word, LibreOffice Writer of je e-mail vind je dezelfde knoppen terug: <strong>B</strong> voor vet, de 4 streepjes-knoppen om uit te lijnen en de knop met bolletjes voor een lijst.</p>
+      <p>Ook <kbd>Ctrl</kbd>+<kbd>Z</kbd>, <kbd>Ctrl</kbd>+<kbd>C</kbd> en <kbd>Ctrl</kbd>+<kbd>V</kbd> werken daar. Het icoon kan er iets anders uitzien, maar de functie is dezelfde.</p>
+    </section>
+
+    <section id="th-les1">
+      <h3>Uit les 1</h3>
+      <table class="plain">
+        <tr><th>Eén woord selecteren</th><td>Dubbelklik</td></tr>
+        <tr><th>Een alinea selecteren</th><td>Klik 3 keer</td></tr>
+        <tr><th>Van hier tot daar</th><td>Klik, hou <kbd>Shift</kbd> ingedrukt, klik</td></tr>
+        <tr><th>Ongedaan maken</th><td><kbd>Ctrl</kbd> + <kbd>Z</kbd></td></tr>
+        <tr><th>Verborgen tekens</th><td>Menu <span class="ui">Bekijken</span> → <span class="ui">Opmaakmarkeringen tonen</span></td></tr>
+      </table>
+    </section>
+  </div>
+</aside>
+</div>
+
+<footer class="site">
+  <img src="assets/dalton-gent-logo.png" alt="GO! Dalton Gent">
+  Toegepaste Informatica · 2de graad Organisatie en logistiek · NovaDepot is een fictief bedrijf.
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

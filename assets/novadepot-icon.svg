@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 116 116" role="img" aria-label="NovaDepot"><g>
+  <rect x="4" y="12" width="108" height="100" rx="18" fill="#3C51A0"/>
+  <!-- isometrische doos (depot) -->
+  <path d="M58 40 L84 53 L58 66 L32 53 Z" fill="#FFFFFF"/>
+  <path d="M32 53 L58 66 L58 96 L32 83 Z" fill="#A7B1DE"/>
+  <path d="M84 53 L58 66 L58 96 L84 83 Z" fill="#DCE1F4"/>
+  <path d="M45 46.5 L71 59.5 L71 67 L45 54 Z" fill="#FCD6CF" opacity=".95"/>
+  <!-- ster (nova) -->
+  <path d="M96 4 C97.6 14 100 16.4 110 18 C100 19.6 97.6 22 96 32 C94.4 22 92 19.6 82 18 C92 16.4 94.4 14 96 4 Z" fill="#FCD6CF" stroke="#3C51A0" stroke-width="3" stroke-linejoin="round"/>
+</g></svg>
